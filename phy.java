@@ -33,10 +33,17 @@ public class phy
     public double calcDrop(double dist, double arrDrop, double initVel, double arrAccel)
     {
         //This will calculate the overall drop of the arrow given the distance away, accelerating force of gravity, initial
-        //velocity and acceleration towards the target.   
-        
+        //velocity and acceleration towards the target.       
     }
-   
 
+    public double deviationX()
+    {
+        //Not too sure how I should do this one, but I do need it here.
+    }
+
+    public double deviationY()
+    {
+        //This one is actually pretty easy, I might rename calcDrop to DeviationY
+    }
     
 }
