@@ -1,0 +1,14 @@
+//Kevin Hu
+//8/16/2017
+//Making a program that calculates arrow drop given
+/* 
+	Weight
+	Distance
+	Velocity
+	Starting Height
+*/
+
+public static void main(String args[])
+{
+	
+}
