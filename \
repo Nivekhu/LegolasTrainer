@@ -8,11 +8,11 @@ public class phy
 {
 	public static void main(String[] args)
 	{
-        double distance;  // Distance the shooter is from the target.	
-       	double weight;    // The weight of the arrow, Grams		
-        double targetX = 0;	  // Target X position, Not sure what to use for this? I assume +/- meters from a centerpoint.
-		double targetY = 0;	  // Target Y position, Ok I've though about it a bit, I think we'll do the x/y of the shooter as 0
-        double springC;   // Spring constant, Newtons/Meter
+		double targetX;	  // Target X position, Not sure what to use for this? I assume +/- meters from a centerpoint.
+		double targetY;	  // Target Y position, Ok I've though about it a bit, I think we'll do the x/y of the shooter as 0
+		double distance;  // Distance the shooter is from the target, Meters
+		double weight;    // The weight of the arrow, Grams
+		double springC;   // Spring constant, Newtons/Meter
 		double drawDis;   // Distance the string is drawn back, Meters
 	
 		//These are variables that are a conmbination of the previous variables
@@ -24,39 +24,21 @@ public class phy
         double arrVector; // This is currently a placeholder for the vector, I'm considering making this it's own class.
         double initVel;   // This is the initial velocity, Meters/Second
         
-        Scanner s = new Scanner(System.in);
+        Scanner s = new Scanner(system.in);
 
         System.out.print("Please enter the distance from the target(meters): ");
-        distance = Double.parseDouble(s.nextLine());
-        System.out.println(distance + " m");
-
-        System.out.print("Enter the weight of the arrow(grams): ");
-        weight = Double.parseDouble(s.nextLine());
-        System.out.println(weight + " g");
-
-        System.out.print("Enter the spring Constant of the Bow(Newtons/Meter)(420): ");
-        springC = Double.parseDouble(s.nextLine());
-        System.out.println(springC + " N/M");
-
-        System.out.print("Enter the draw distance(meters): ");
-        drawDis = Double.parseDouble(s.nextLine());
-        System.out.println(drawDis + " m");
-
-        arrAccel = calcAccel(drawDis, springC, weight);
-        System.out.println(arrAccel + " m/s2");
+        distance = s.nextLine();
+        System.out.println();
+        System.out.println(disance + "m");
 	
 	}
-   
-    public static double calcAccel(double drawDis, double springC, double weight)
+    
+    public double calcForce(double drawDis, double springC, double weight)
     {
-        double force;
-        double accel;
-        force = springC * drawDis;
-        accel = force/weight;
-        return accel;
+        //This will calculate the force the arrow is traveling at. We take into account the draw distance, string constant,
+        //weight of the arrow.
     }
 
-    /*
     public double calcDrop(double dist, double arrDrop, double initVel, double arrAccel)
     {
         //This will calculate the overall drop of the arrow given the distance away, accelerating force of gravity, initial
@@ -72,5 +54,5 @@ public class phy
     {
         //This one is actually pretty easy, I might rename calcDrop to DeviationY
     }
-    */
+    
 }
