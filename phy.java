@@ -10,8 +10,8 @@ public class phy
 	{
         double distance;  // Distance the shooter is from the target.	
        	double weight;    // The weight of the arrow, Grams		
-        double targetX = 0;	  // Target X position, Not sure what to use for this? I assume +/- meters from a centerpoint.
-		double targetY = 0;	  // Target Y position, Ok I've though about it a bit, I think we'll do the x/y of the shooter as 0
+        double angleX = 0;	  // Angle of deviation for aiming at the target, 0 is at the target, + is to the right, - is to the left.
+		double angleY = 0;	  // Angle of deviation for aiming at the target, 0 is at the target, + is above, - is below.
         double springC;   // Spring constant, Newtons/Meter
 		double drawDis;   // Distance the string is drawn back, Meters
 	
@@ -25,7 +25,9 @@ public class phy
         double initVel;   // This is the initial velocity, Meters/Second
         
         Scanner s = new Scanner(System.in);
+        
 
+        //Grabs the given inputs: Distance, weight, spring constant, maybe starting height.
         System.out.print("Please enter the distance from the target(meters): ");
         distance = Double.parseDouble(s.nextLine());
         System.out.println(distance + " m");
@@ -37,10 +39,14 @@ public class phy
         System.out.print("Enter the spring Constant of the Bow(Newtons/Meter)(420): ");
         springC = Double.parseDouble(s.nextLine());
         System.out.println(springC + " N/M");
+        
 
+        //Grabs the variable inputs, angleX, angleY, drawDis
         System.out.print("Enter the draw distance(meters): ");
         drawDis = Double.parseDouble(s.nextLine());
         System.out.println(drawDis + " m");
+        
+
 
         arrAccel = calcAccel(drawDis, springC, weight);
         System.out.println(arrAccel + " m/s2");
@@ -61,16 +67,6 @@ public class phy
     {
         //This will calculate the overall drop of the arrow given the distance away, accelerating force of gravity, initial
         //velocity and acceleration towards the target.       
-    }
-
-    public double deviationX()
-    {
-        //Not too sure how I should do this one, but I do need it here.
-    }
-
-    public double deviationY()
-    {
-        //This one is actually pretty easy, I might rename calcDrop to DeviationY
     }
     */
 }
