@@ -38,16 +38,14 @@ public class phy
 
         System.out.print("Enter the spring Constant of the Bow(Newtons/Meter)(420): ");
         springC = Double.parseDouble(s.nextLine());
-        System.out.println(springC + " N/M");
-        
+        System.out.println(springC + " N/M");        
 
         //Grabs the variable inputs, angleX, angleY, drawDis
         System.out.print("Enter the draw distance(meters): ");
         drawDis = Double.parseDouble(s.nextLine());
         System.out.println(drawDis + " m");
         
-
-
+        //Testing arrow methods
         arrAccel = calcAccel(drawDis, springC, weight);
         System.out.println(arrAccel + " m/s2");
 	
